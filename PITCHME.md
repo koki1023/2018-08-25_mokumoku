@@ -1,64 +1,38 @@
-### ECSでrailsの環境構築を試行錯誤
-
-の前に
+### Websocket (Socket.io) で遊びました
 
 ---
 
-### thinkpadのキーボード最高
-
-昨日から仕事で使っている
-
-押しごたえ半端じゃなく良い
-
----
-
-MACに触れてみる
-
----
-
-え、石？！
-
----
-
-これは買いだね！
-お求めはAmazonからどうぞ！
-
----
-
-### ECSでrailsの環境構築を試行錯誤
-
-terraformでやろうとした　
-
-=> 全体像把握できてないからやめる
-
-=> consoleからやる
+遊ばれました。
 
 ---
 
 ### できたこ
 
-- 適当なrails 作成
-- RDS作成
-- Dockerfile作成
-- clusterの作成
-- serviceの作成
-- task作成
-- ecrにimageをあげる
-- task run
+- websocketって一体全体どんな感じかの大枠理解
+  - real-time通信
+    - ajaxとの別れ :sob:
+    
+  - webRtcと並ぶような技術で、重い処理はこちらがいいと書いてあったが、本当にそうなのかは不明。一応頭にはいれておく
+
+- socket.ioの基本的な理解
+  - socket.on
+  - socket.emmit
+  - namespace
+  - room
+
+- bulmaなどのcssフレームワークを知る
+- Nuxtとsocket.ioをdocer-comopseで環境開発
 
 ---
 
 ### できていないこと
 
-- railsが走っていない
-  - railsが走ってくれればwrapbox入れる
-  
+- Nuxtまったくもって触れなかった。。。
+- 
 ---
 
 ### 得た知見
 
-- わかっていないのにterraformからとっかかるのはよくない
-- docker化されているの非常に便利
-  - 会社の人やっぱりすごい...
+- 
 
 
