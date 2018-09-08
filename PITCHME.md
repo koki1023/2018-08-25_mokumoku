@@ -1,4 +1,4 @@
-### Websocket (Socket.io) で遊びました
+### Socket.io で遊びました
 
 ---
 
