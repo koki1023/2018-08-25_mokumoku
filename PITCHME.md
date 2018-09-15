@@ -1,7 +1,8 @@
-### Node.js / Express
+### 今日の成果
 
-`Web Devlopment with Node & Express`
-を読みすすました
+- `Web Devlopment with Node & Express`を読みすすました
+- vuexの知見を蓄える
+- nuxtの知見を蓄える
 
 ---
 
