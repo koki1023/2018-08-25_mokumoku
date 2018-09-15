@@ -1,39 +1,26 @@
-### Socket.io で遊びました
+### Node.js / Express
+
+`Web Devlopment with Node & Express`
+を読みすすました
 
 ---
 
-遊ばれました。
+### Node.js / Express
+
+`Web Development with Node & Express`
+を読みすすました
 
 ---
 
-### できたこ
+- ページ数が600とかある
+- 英語オンリー
+- Node.jsのみならず
+  - gitを２ページくらい使って説明
+  - QAについての章が何故か存在している
+  - sessionのもたせ方とか詳しくかいてある
+  - npmの挙動
+  - mongoDBで遊べる
+  - Rest APIについても丁寧な説明
 
-- socket.io って一体全体どんな感じかの大枠理解
-  - real-time通信
-    - 裏を隠蔽してくれているので、わかりやすいし、実装しやすい。
-    - ajaxとの別れ :sob:
-    
-  - webRtcと並ぶような技術で、重い処理はこちらがいいと書いてあったが、本当にそうなのかは不明。一応頭にはいれておく
-
-- socket.ioの基本的な理解
-  - socket.on
-  - socket.emmit
-  - namespace
-  - room
-
-- bulmaなどのcssフレームワークを知る
-- Nuxtとsocket.ioをdocer-comopseで環境開発
-
----
-
-### できていないこと
-
-- Nuxtまったくもって触れなかった。。。
-
----
-
-### 得た知見
-
-- 海鮮丼にしておいてよかった
-
+初学者にすごく優しく丁寧な本です。
 
