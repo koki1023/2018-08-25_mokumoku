@@ -1,13 +1,5 @@
 ### 今日の成果
  
-o'reillyの `GNU Make`本を読みすすめました。
-- ルール
-  - ターゲット: 必須項目`\n\t`実行コマンド
-  - パターンルール
-- 依存関係
-- 変数
-  - 自動変数
-  
 ```c
 #include <unistd.h>
 #include <stdio.h>
