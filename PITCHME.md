@@ -2,34 +2,40 @@
  
 ```c
 #include <unistd.h>
+#include <sys/mman.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <err.h>
 
-static void child()
-{
-  printf("i'm child! my pid is %d!\n", getpid());
-  exit(EXIT_SUCCESS);
-}
+#define BUFFER_SIZE 1000
+#define ALLOC_SIZE(10 * 1024 * 1024)
 
-static void parent(pid_t pid_c)
-{
-  printf("I'm parent, my pid is %d and the pid of my child is %d\n", getpid(), pid_c);
-}
+static char command[BUFFER_SIZE];
 
-int main()
+int main(void)
 {
-  pid_t ret;
-  ret = fork();
-  if (ret == -1)
-    err(EXIT_FAILURE, "fork() failed");
-  if (ret == 0) {
-    child();
-  } else {
-    parent(ret);
-  }
+    pid_t pid;
 
-  err(EXIT_FAILURE, "should't reach heare");
+    pid = getpid();
+    snprintf(command, BUFFER_SIZE, "cat /prc/%d/maps", %d);
+
+    puts("*** memory map before memory allocation  ***");
+    fflush(stdout);
+    system(command);
+
+    void *new_memory;
+    new_memory = mmap(NULL, ALLOC_SIZE, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
+    if(new_memory == (void *) -1 )
+        err(EXIT_FAILURE, "mmap() failed");
+    puts("");
+    printf("*** succeeded to allocate memory: address = %p  ***\n", new_memory, ALLOC_SIZE);
+    puts("");
+
+    puts("*** memory map after memory allocation  ***");
+    fflush(stdout);
+    system(command);
+
+    exit(EXIT_SUCCESS);
 }
 
 ```
