@@ -1,40 +1,7 @@
-### 今日の成果
+### 今日の成果一覧
+
+- ECSのec2コンテナインスタンス上にawsvpcモードでtaskを起動させることの闇を体感
+- [Amazon Web Services 基礎からのネットワーク＆サーバー構築 改訂版](https://www.amazon.co.jp/Amazon-Web-Services-%E5%9F%BA%E7%A4%8E%E3%81%8B%E3%82%89%E3%81%AE%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF%EF%BC%86%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E6%A7%8B%E7%AF%89-%E6%94%B9%E8%A8%82%E7%89%88-ebook/dp/B06Y5ZSYY4/ref=sr_1_1?s=digital-text&ie=UTF8&qid=1540015149&sr=1-1&keywords=aws+%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF)でマスタリングTCP/IPで得た知識を活用しながら、awsのvpc辺りの組み立てをしてみた。
+
+---
  
-```c#include <unistd.h>
-#include <sys/mman.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <err.h>
-
-#define BUFFER_SIZE 1000
-#define ALLOC_SIZE (10*1024*1024)
-
-static char command[BUFFER_SIZE];
-
-int main(void)
-{
-    pid_t pid;
-
-    pid = getpid();
-    snprintf(command, BUFFER_SIZE, "cat /prc/%d/maps", pid);
-
-    puts("*** memory map before memory allocation  ***");
-    fflush(stdout);
-    system(command);
-
-    void *new_memory;
-    new_memory = mmap(NULL, ALLOC_SIZE, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
-    if(new_memory == (void *) -1 )
-        err(EXIT_FAILURE, "mmap() failed");
-    puts("");
-    printf("*** succeeded to allocate memory: address = %p; size = 0x%x  ***\n", new_memory, ALLOC_SIZE);
-    puts("");
-
-    puts("*** memory map after memory allocation  ***");
-    fflush(stdout);
-    system(command);
-
-    exit(EXIT_SUCCESS);
-}
-
-```
